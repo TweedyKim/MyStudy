@@ -27,7 +27,7 @@ class Puppy(Dog):
     def wag(self):
         self.__read_diary()
         print("Puppy's wag tail")
-    
+
     #Static Method on Class
     def scm():
         print("Duke~~~!!")
