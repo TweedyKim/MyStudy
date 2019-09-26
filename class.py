@@ -53,4 +53,3 @@ Puppy.scm()
 
 ta = Test()
 ta.test()
-print("end")
