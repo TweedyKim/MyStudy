@@ -8,8 +8,8 @@ if os_ver == 'nt':
 else:
     os.system('clear')
 
-msg = 'git commit -am'
-msg += input("Insert commit for push\n=>")
+msg = input("Insert commit for push\n=>")
 
 os.system('git add --all')
-os.system(msg)
+os.system('git commit -am "{}"'.format(msg))
+#os.system('git push')
