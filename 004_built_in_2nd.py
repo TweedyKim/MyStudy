@@ -1,5 +1,26 @@
+import random
+import time
 
+print('===================================================================')
+print('|  Built-in Function #2                                           |')
+print('|  1.math function                                                |')
+print('|    1) abs    : absolute value                                   |')
+print('|    2) divmod : remainder                                        |')
+print('|    3) pow    : multiplier                                       |')
+print('|    4) round  : rounding off to the nearest integer              |')
+print('|  2.convert number                                               |')
+print('|    -> transfer attribution from method to property.             |')
+print('|  4.@staticmethod                                                |')
+print('|    -> It makes for instance to call staticmethod.               |')
+print('|  4.hasattr                                                      |')
+print('|    -> Return a boolean whether an object exist or not.          |')
+print('|  5.getattr                                                      |')
+print('|    -> Get an attribute of an existing object.                   |')
+print('|  6.hash                                                         |')
+print('|  7.id                                                           |')
+print("===================================================================\n\n")
 print("\n\n")
+
 print("abs(-10) :", abs(-10))                 #절대값
 print("divmod(5,2) :", divmod(5,2))              #몫 & 나머지
 print("bin(17) :", bin(17), "  bin(0o17) :", bin(0o17))       #2진수 변환
