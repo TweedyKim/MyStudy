@@ -1,6 +1,8 @@
 import random
 import time
 
+
+print('\n\n')
 print('===================================================================')
 print('|  Built-in Function #2                                           |')
 print('|  1.math function                                                |')
@@ -19,15 +21,25 @@ print('|    -> Get an attribute of an existing object.                   |')
 print('|  6.hash                                                         |')
 print('|  7.id                                                           |')
 print("===================================================================\n\n")
-print("\n\n")
 
-print("abs(-10) :", abs(-10))                 #절대값
-print("divmod(5,2) :", divmod(5,2))              #몫 & 나머지
+
+print('1. Math Function - abs, divmod & round')
+print('abs(-10) is', abs(-10))
+print('divmod(5,2) is', divmod(5,2))
+print('pow(2,10) is', pow(2,10))
+print('round(0.5) is', round(0.5))
+print('round(1.5) is', round(1.5))
+print('round(2.5) is', round(2.5))
+print('round(3.5) is', round(3.5))
+print('round(4.5) is', round(4.5))
+print('round(2.334456,3) is', round(2.334456,3))
+print('\n')
+
 print("bin(17) :", bin(17), "  bin(0o17) :", bin(0o17))       #2진수 변환
 print("oct(17) :", oct(17))                  #8진수 변환
 print("hex(0b1101) :", hex(0b1101))              #16진수 변환
 print("bool(0) :", bool(0), "bool(3) :", bool(3), "bool("") :", bool(""))
-print("pow(2,10) :", pow(2,10))
+
 
 print("\n\n")
 print("help(min)")
@@ -37,11 +49,6 @@ print("\n\n")
 print("type(10) :", type(10))
 #range(1,20,2)
 #거리가 같다면 짝수를 선택함
-print("round(2.5), round(2.51) :", round(2.5), round(2.51))
-print("round(3.5), round(3.51) :", round(3.5), round(3.51))
-print("round(4.5), round(4.51) :", round(4.5), round(4.51))
-print("round(1.5), round(2.5), round(2.51), round(2.3456,3), round(0.5)")
-print(round(1.5), round(2.5), round(2.51), round(2.3456,3), round(0.5))
 print("\ndir()")
 print(dir())
 print("\ndir(random)")
