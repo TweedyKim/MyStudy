@@ -1,10 +1,49 @@
+print('\n\n')
+print('===================================================================')
+print('|  Built-in Function #3                                           |')
+print('|  1.math function                                                |')
+print('|    1) abs    : absolute value                                   |')
+print('|    2) divmod : remainder                                        |')
+print('|    3) pow    : multiplier                                       |')
+print('|    4) round  : rounding off to the nearest integer              |')
+print('|  2.convert number                                               |')
+print('|    1) bin  : convert a number to binary                         |')
+print('|    2) oct  : convert a number to octa                           |')
+print('|    3) hex  : convert a number to hex                            |')
+print('|    4) bool : return a boolean value                             |')
+print('|  3.help                                                         |')
+print('|    -> It describes a function.                                  |')
+print('|  4.dir                                                          |')
+print('|    -> It shows functions in a library.                          |')
+print('|  5.Fucntion for unicode                                         |')
+print('|    1) bytes                                                     |')
+print('|    2) bytearray                                                 |')
+print('|  6.eval & exec                                                  |')
+print("===================================================================\n\n")
+
 import math
 
-s = "123"
-print("s = ", s)
-print("list(s) = ", list(s))
-print("join list(s)", "-".join(list(s)))
-print("")
+
+print("1. iterable functions - list, Join")
+iNum = '12345678'
+cStr = '김동훈천재'
+iLst = list(iNum)
+cLst = list(cStr)
+iJoin = '.'.join(iLst)
+cJoin = '-'.join(cLst)
+print('   iNmu is "%s"' % iNum, ' and the type of iNum is', type(iNum))
+print('   cStr is "%s"' % cStr, ' and the type of cStr is', type(cStr))
+
+print('   iLst is the result of "list(iNum)". ->', iLst, ' and the type of iLst is', type(iLst))
+print('   cLst is the result of "list(cStr)". ->', cLst, ' and the type of cLst is', type(cLst))
+
+
+print('   iJoin is the result of "join(iLst)". ->', iJoin, ' and the type of iJoin is', type(iJoin))
+print('   cJoin is the result of "join(cLst)". ->', cJoin, ' and the type of cJoin is', type(cJoin))
+print("\n")
+# list(), set(), tuple(), enumerate()
+# min(), max(), sum(iter, start_value)
+
 
 #file fucntion
 #file = open(<file path>,<mode>)       => mode: w, a, r
@@ -17,9 +56,6 @@ print("")
 #   for line in file:
 #       print(line)
 
-print("iterable functions")
-# list(), set(), tuple(), enumerate()
-# min(), max(), sum(iter, start_value)
 
 # import math => math.fsum(iter)
 print("\n===============[sum]===============")
