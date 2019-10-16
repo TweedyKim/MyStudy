@@ -1,0 +1,21 @@
+import pyautogui
+import time
+
+time.sleep(1600)
+pyautogui.moveTo(3598, 834)
+pyautogui.click()
+time.sleep(3)
+pyautogui.click()
+
+
+
+#pyautogui.moveTo(1626,684)
+#pyautogui.click()
+#pyautogui.moveTo(-410,685)
+#pyautogui.click()
+#a = input('\n\n input key number\n=>')
+#pyautogui.moveTo(1212,1065)
+#pyautogui.click()
+#pyautogui.typewrite(a)
+#pyautogui.moveTo(1263,1192)
+#pyautogui.click()

@@ -24,23 +24,30 @@ print("===================================================================\n\n")
 import math
 
 
-print("1. iterable functions - list, Join")
+print("1. iterable functions - list, Join & tuple")
 iNum = '12345678'
 cStr = '김동훈천재'
 iLst = list(iNum)
 cLst = list(cStr)
 iJoin = '.'.join(iLst)
 cJoin = '-'.join(cLst)
+iTuple = tuple(iLst)
+cTuple = tuple(cLst)
 print('   iNmu is "%s"' % iNum, ' and the type of iNum is', type(iNum))
 print('   cStr is "%s"' % cStr, ' and the type of cStr is', type(cStr))
 
 print('   iLst is the result of "list(iNum)". ->', iLst, ' and the type of iLst is', type(iLst))
 print('   cLst is the result of "list(cStr)". ->', cLst, ' and the type of cLst is', type(cLst))
 
-
 print('   iJoin is the result of "join(iLst)". ->', iJoin, ' and the type of iJoin is', type(iJoin))
 print('   cJoin is the result of "join(cLst)". ->', cJoin, ' and the type of cJoin is', type(cJoin))
+
+print('   iTuple is the result of "tuple(iLst)". ->', iTuple, ' and the type of iJoin is', type(iTuple))
+print('   cTuple is the result of "tuple(cLst)". ->', cTuple, ' and the type of cJoin is', type(cTuple))
+
 print("\n")
+
+
 # list(), set(), tuple(), enumerate()
 # min(), max(), sum(iter, start_value)
 
