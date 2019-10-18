@@ -5,4 +5,5 @@ print(fruits.keys())
 print(fruits.values())
 print(int(500) in fruits.values())
 
-
+for key, val in fruits.items():
+    print(key,' ', val)

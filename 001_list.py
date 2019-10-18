@@ -80,3 +80,12 @@ print('   iTuple is the result of "tuple(iLst)". ->', iTuple, ' and the type of 
 print('   cTuple is the result of "tuple(cLst)". ->', cTuple, ' and the type of cJoin is', type(cTuple))
 
 print("\n")
+
+
+#=============================================================================
+#다차원 동적 배열 방법
+lstFail_Cnt = [[[0] * 8 for i in range(0,64)] for j in range(0,3)]
+lstBuf = [[[1] * 8 for i in range(0,64)]]
+lstFail_Cnt.append(lstBuf)
+#=============================================================================
+
