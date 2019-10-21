@@ -31,8 +31,10 @@ def GetECCBlkNo(strY_add):
         iY_add -= iCol_Size
         return int(iY_add / iSECC_Size) + 4
 
-iCol_Size = int(input ("Input the size of column\n =>"))
-iCol_Spare_Size = int(input ("Input the size of column spare\n =>"))
+#iCol_Size = int(input ("Input the size of column\n =>"))
+#iCol_Spare_Size = int(input ("Input the size of column spare\n =>"))
+iCol_Size = 2048
+iCol_Spare_Size = 128
 iCol_Tot_Size = iCol_Size + iCol_Spare_Size
 print('1. Column Size       :', iCol_Size)
 print('2. Column Spare Size :', iCol_Spare_Size)
@@ -45,13 +47,15 @@ iSeq_Page = 1
 
 dicFail_Info = {}
 
-with open('D:\dut33_108c.asc', mode= 'rt', encoding='utf-8') as fr:
+with open('D:\dut45_108c.asc', mode= 'rt', encoding='utf-8') as fr:
     bFlag = False
     for line in fr:
         line = line.strip()
         if len(line) != 0:
             if line.find('BIT #') >= 0 and line.find('OUTPUT') >= 0:
                 bFlag = False
+            if line.find('BIT #') >= 0 and line.find('=') >= 0 :
+                IO = line.split('=')[1].strip()
             if bFlag == True:
                 lstAddress = line.replace('#','').split('  ')
                 del lstAddress[0]
@@ -66,17 +70,21 @@ with open('D:\dut33_108c.asc', mode= 'rt', encoding='utf-8') as fr:
                     
                     if keyECC_Blk in dicFail_Info:
                         dicFail_Info[keyECC_Blk][0] += 1
-                        dicFail_Info[keyECC_Blk].append(fadd)
+                        dicFail_Info[keyECC_Blk].append('{} {}'.format(fadd,IO))
                     else:
-                        dicFail_Info[keyECC_Blk] = [1, fadd]
+                        dicFail_Info[keyECC_Blk] = [1, '{} {}'.format(fadd,IO)]
             if line.find('F-CNT') >=0:
                 bFlag = True
 
-with open('D:\dut33_108c_summary.csv', mode= 'wt', encoding='utf-8') as fw:
+with open('D:\dut45_108c_summary.csv', mode= 'wt', encoding='utf-8') as fw:
     for key, val in dicFail_Info.items():
         Blk = str(key).split('_')
-        fw.write('Blk%03d,Page%02d,ECC%d,%02d,' % (int(Blk[0]), int(Blk[1]), int(Blk[2]), val[0]))
+        fw.write('Blk%03d,Page%02d,Sector%d,%02d,' % (int(Blk[0]), int(Blk[1]), int(Blk[2]), val[0]))
+        if val[0] > 4:
+            fw.write('fail,')
+        else:
+            fw.write('pass,')
         for i in range(1,len(val)):
-            fw.write('(Y{} X{}),'.format(str(val[i]).split(' ')[0] , str(val[i]).split(' ')[1]))
+            fw.write('(Y%s X%s IO%02d),' % (str(val[i]).split(' ')[0] , str(val[i]).split(' ')[1], int(str(val[i]).split(' ')[2])))
 
         fw.write('\n')

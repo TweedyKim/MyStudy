@@ -1,7 +1,7 @@
 import pyautogui
 import time
 
-pyautogui.moveTo(1626,684)
+pyautogui.moveTo(1591,804)
 pyautogui.click()
 pyautogui.moveTo(-410,685)
 pyautogui.click()
