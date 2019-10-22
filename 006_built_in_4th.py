@@ -1,14 +1,21 @@
-# sorted, reversed()
-print("======================[sort & reversed]=======================")
-num = [1,4,3,6,3,5,2]
-print("num :", num)
-print("sorted(num) :", sorted(num))
-print("sorted(num,reverse=True) :", sorted(num,reverse=True))
+print('\n\n')
+print('===================================================================')
+print('|  Built-in Function #4                                           |')
+print('|  1.sort, reverse                                                |')
+print('|  2.sort object                                                  |')
+print("===================================================================\n\n")
 
+# sorted, reversed()
+print('1. sort, reverse & sorted()')
+num = [1,4,3,6,3,5,2]
+print("   num is", num)
+print("   The result of sorted(num) :", sorted(num))
+print("   The result of sorted(num,reverse=True) :", sorted(num,reverse=True))
 num.sort()
-print("num.sort() and print num :", num)
+print("The result of num.sort() is", num)
 num.sort(reverse=True)
-print("num.sort(reverse=True) and print num :", num)
+print("The result of num.sort(reverse=True) is", num)
+print('\n')
 
 # Sorting Object
 print("\nSorting Object")

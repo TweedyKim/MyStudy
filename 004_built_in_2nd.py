@@ -1,5 +1,7 @@
 import random
 import time
+import math
+
 
 
 print('\n\n')
@@ -10,6 +12,9 @@ print('|    1) abs    : absolute value                                   |')
 print('|    2) divmod : remainder                                        |')
 print('|    3) pow    : multiplier                                       |')
 print('|    4) round  : rounding off to the nearest integer              |')
+print('|    5) min    : minimum value of an iterable of numbers          |')
+print('|    6) max    : maximum value of an iterable of numbers          |')
+print('|    7) sum    : sum of an iterable of numbers                    |')
 print('|  2.convert number                                               |')
 print('|    1) bin  : convert a number to binary                         |')
 print('|    2) oct  : convert a number to octa                           |')
@@ -19,7 +24,7 @@ print('|  3.help                                                         |')
 print('|    -> It describes a function.                                  |')
 print('|  4.dir                                                          |')
 print('|    -> It shows functions in a library.                          |')
-print('|  5.Fucntion for unicode                                         |')
+print('|  5.Fucntion for byte & unicode                                  |')
 print('|    1) bytes                                                     |')
 print('|    2) bytearray                                                 |')
 print('|  6.eval & exec                                                  |')
@@ -36,6 +41,10 @@ print('   round(2.5) is', round(2.5))
 print('   round(3.5) is', round(3.5))
 print('   round(4.5) is', round(4.5))
 print('   round(2.334456,3) is', round(2.334456,3))
+print("   sum([1,3,5,9]) =", sum([1,3,5,9]))
+print("   math.fsum(a) =", math.fsum([1,3,5,9]))
+print("   min([1,3,5,9]) =", min([1,3,5,9]))
+print("   max([1,3,5,9]) =", max([1,3,5,9]))
 print('\n')
 
 print('2. Convert number - bin, oct, hex & boolean')
@@ -56,7 +65,7 @@ print('dir()\n', dir(),'\n')
 print('dir(time)', dir(time))
 print('\n')
 
-print('5. Fucntion for unicode')
+print('5. Fucntion for byte & unicode')
 TsChr1 = 's'
 TsChr2 = '김'
 TsChr3 = bytes(TsChr1, 'UTF8')

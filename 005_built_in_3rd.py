@@ -1,30 +1,28 @@
 print('\n\n')
 print('===================================================================')
 print('|  Built-in Function #3                                           |')
-print('|  1.math function                                                |')
-print('|    1) abs    : absolute value                                   |')
-print('|    2) divmod : remainder                                        |')
-print('|    3) pow    : multiplier                                       |')
-print('|    4) round  : rounding off to the nearest integer              |')
-print('|  2.convert number                                               |')
-print('|    1) bin  : convert a number to binary                         |')
-print('|    2) oct  : convert a number to octa                           |')
-print('|    3) hex  : convert a number to hex                            |')
-print('|    4) bool : return a boolean value                             |')
-print('|  3.help                                                         |')
-print('|    -> It describes a function.                                  |')
-print('|  4.dir                                                          |')
-print('|    -> It shows functions in a library.                          |')
-print('|  5.Fucntion for unicode                                         |')
+print('|  1.1. iterable functions - list, Join & tuple                   |')
+print('|    1) list    : Built-in mutable sequence.                      |')
+print('|    2) tuple : Built-in immutable sequence.                      |')
+print('|    3) join    : Concatenate any number of strings.              |')
+print('|  2.set, intersection, union, difference & enumerate             |')
+print('|    1) set  : Build an unordered collection of unique elements.  |')
+print('|    2) intersection                                              |')
+print('|    3) union                                                     |')
+print('|    4) difference                                                |')
+print('|    5) enumerate                                                 |')
+print('|  3.File Stream                                                  |')
+print('|  4.all & any                                                    |')
+print('|  5.iter, next & zip                                             |')
 print('|    1) bytes                                                     |')
 print('|    2) bytearray                                                 |')
-print('|  6.eval & exec                                                  |')
+print('|  6.filter, map & reduce                                         |')
 print("===================================================================\n\n")
 
 import math
 
 
-print("1. iterable functions - list, Join & tuple")
+print('1. iterable functions - list, Join & tuple')
 iNum = '12345678'
 cStr = '김동훈천재'
 iLst = list(iNum)
@@ -44,113 +42,70 @@ print('   cJoin is the result of "join(cLst)". ->', cJoin, ' and the type of cJo
 
 print('   iTuple is the result of "tuple(iLst)". ->', iTuple, ' and the type of iJoin is', type(iTuple))
 print('   cTuple is the result of "tuple(cLst)". ->', cTuple, ' and the type of cJoin is', type(cTuple))
-
 print("\n")
 
+print('2. set, intersection, union, difference & enumerate')
+print('   The result of set("tweedy") is', set('tweedy'))
+s1 = set([1,2,3,4,5,6])
+s2 = set([4,5,6,7,8,9])
+print('   s1 is', s1)
+print('   s2 is', s2)
+print('   The result of s1 & s2 is', s1 & s2)
+print('   The result of "s1.intersection(s2)" is', s1.intersection(s2))
+print('   The result of s1 | s2 is', s1 | s2)
+print('   The result of "s1.union(s2)" is', s1.union(s2))
+print('   The result of s1 - s2 is', s1 - s2)
+print('   The result of "s1.difference(s2)" is', s1.difference(s2))
+print('   Test of enumerate is like following.')
+for i,j in enumerate(s1):
+    print('   The elements of "s1": index-{} value-{}'.format(i,j))
+print("\n")
 
-# list(), set(), tuple(), enumerate()
-# min(), max(), sum(iter, start_value)
+print('3. File stream')
+print('   <stream name> = open(<file path>,<mode>)')
+print('   close(<stream name>)')
+print('   with open(<file path>, <mdoe>) as <stream name>:')
+print('   mode: w, a, r')
+print('   file.write("")')
+print('   for line in file:')
+print('     print(line)')
+print("\n")
 
-
-#file fucntion
-#file = open(<file path>,<mode>)       => mode: w, a, r
-
-#with는 자동으로 file session을 close 한다.
-#with open(<file path>, "w") as file:
-#   file.write("")
-
-#with open(<file path>, "r") as file:
-#   for line in file:
-#       print(line)
-
-
-# import math => math.fsum(iter)
-print("\n===============[sum]===============")
-a = [2,3,5]
-print("a =", a)
-print("sum(a) =", sum(a))
-print("sum(a,100) =", sum(a,100))
-print("math.fsum(a) =", math.fsum(a))
-
-# all(iter), any(iter)
-print("\n============[all, any]=============")
-a = [1,2,3,0]
-print("a =", a)
-print("all(a) =", all(a))
-print("any(a) =", any(a))
+print('4. all & any')
+print('   The result of all([1,2,3,0]) is', all([1,2,3,0]))
+print('   The result of any([1,2,3,0]) is', any([1,2,3,0]))
+print("\n")
 
 #iter(), next() => iter는 data Return 후 delete한다.
-print("\n===========[iter, next]============")
+print('5. iter, next & zip')
+a = list(range(1,9))
+b = list(range(8,17))
+c = list(range(1,7))
+print('   a is', a)
+print('   b is', b)
+print('   c is', c)
 ai = iter(a)
-print("ai :", ai)             # same with ai = next(iter(a))
-print("next(ai, None) :", next(ai, None))
-print("next(ai, None) :", next(ai, None))
-print("next(ai, None) :", next(ai, None))
-print("next(ai, None) :", next(ai, None))
-print("next(ai, None) :", next(ai, None))
+print('   ai is iter(a)')
+print('   The result of "next(ai, None)" is', next(ai, None))
+print('   The result of "next(ai, None)" is', next(ai, None))
+print('   The result of "next(ai, None)" is', next(ai, None))
+print('   The result of "next(ai, None)" is', next(ai, None))
+print('   The result of "next(ai, None)" is', next(ai, None))
+print('   The result of "list(ai)" is', list(ai))
+print('   The result of "zip(a,b)" is', list(zip(a,b)))
+print('   The result of "zip(a,c)" is', list(zip(a,c)))
+print("\n")
 
-ai = iter(a)
-print("ai :", ai)
-print("next(ai, None) :", next(ai, None))
-print("list(ai) :", list(ai))
-print("next(ai, None) :", next(ai, None))
+print('6. filter, map & reduce')
+fn = list(range(-5,6))
+print('   fn is', fn)
+print('   filter for negative values of fn is',list(filter(lambda x: x<0, fn)))
+print('   filter for positive values of fn is',list(filter(lambda x: x>=0, fn)))
+print('   map for [fn x 3] values of fn', list(map(lambda x: x*3, fn)))
+print('   map for positive values of fn is', list(map(lambda x: x>=0, fn)))
 
-print("\n==============[zip]================")
-a = [1,2,3]
-b = [4,5,6]
-d = [7,8]
-c = zip(a,b)
-e = zip(a,d)
-print("a :",a)
-print("b :", b)
-print("d :", d)
-print("c = zip(a,b) :", list(c))
-print("e = zip(a,d) :", list(e))
-
-# filter(filter_fn, iter) : filter object
-print("\n============[filter]===============")
-int_num = range(-5,6)
-print(int_num)
-print("list(int_num) :", list(int_num))
-print("\nfilter negative value using by lambda")
-negative = filter(lambda x: x<0, int_num)
-print("negative = filter(lambda x: x<0, int_num) :", negative)
-print("list(negative) :", list(negative))
-
-print("\nfilter negative value using by function")
-def fn(x): return x < 0
-n2 = filter(fn, int_num)
-print(list(n2))
-
-print("\nfilter positive value using by lambda")
-positive = filter(lambda x: x>=0, int_num)
-print("positive = filter(lambda x: x>=0, int_num) :", positive)
-print("list(positive) :", list(positive))
-
-
-# map()
-print("\n==============[map]================")
-def fm(x): return x * 2
-num = (1,2,3,4,5,6)
-print("num :", list(num))
-print("make double by using function")
-dnum = map(fm, num)
-print(list(dnum))
-print("make triple by using lambda")
-tri_num = map(lambda x: x * 3, num)
-print(list(tri_num))
-print("x < 3 by using lambda")
-m = map(lambda x: x < 3, num)
-print(list(m))
-
-
-print("\n============[reduce]===============")
 from functools import reduce
-pro = 1
-lst = [1,2,3,4]
-print(list(lst))
-for num in lst:
-    pro = pro * num
-print("all multiplex using by for :", pro)
-pro2 = reduce(lambda x, y: x * y, lst)
-print("all multiplex using by reduce :", pro2)
+fn = list(range(1,10))
+print('   fn is', fn)
+print('   reduce for plus of fn is',reduce(lambda x, y: x + y, fn))
+print('   reduce for multiple of fn is',reduce(lambda x, y: x * y, fn))
