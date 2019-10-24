@@ -1,8 +1,9 @@
 
+import sqlite3
+
 global iCol_Size
 global iCol_Spare_Size
 global iCol_Tot_Size
-
 
 def Conv_Hex_To_Int(strHex):
     strHex = list(strHex) ; strHex.reverse() ; strHex = ''.join(strHex)
@@ -14,7 +15,6 @@ def Conv_Hex_To_Int(strHex):
             iHex += (ord(i) - ord('A') + 10) * pow(16,cnt)
         cnt += 1
     return iHex
-            
 
 def GetBlkNo(strX_add):
     iBlk_Cnt = 64
@@ -47,7 +47,8 @@ iSeq_Page = 1
 
 dicFail_Info = {}
 
-with open('D:\dut45_108c.asc', mode= 'rt', encoding='utf-8') as fr:
+
+with open('./raw_data/dut5_25c.asc', mode= 'rt', encoding='utf-8') as fr:
     bFlag = False
     for line in fr:
         line = line.strip()
@@ -76,10 +77,15 @@ with open('D:\dut45_108c.asc', mode= 'rt', encoding='utf-8') as fr:
             if line.find('F-CNT') >=0:
                 bFlag = True
 
-with open('D:\dut45_108c_summary.csv', mode= 'wt', encoding='utf-8') as fw:
+conn = sqlite3.connect('db/fbm.db')
+cursor = conn.cursor()
+cursor.execute("CREATE TABLE Dut1_25c(id primary key integer autoincrement, blk integer, page integer, sector integer, fbc text )")
+
+with open('D:\dut1_25c_summary.csv', mode= 'wt', encoding='utf-8') as fw:
     for key, val in dicFail_Info.items():
         Blk = str(key).split('_')
         fw.write('Blk%03d,Page%02d,Sector%d,%02d,' % (int(Blk[0]), int(Blk[1]), int(Blk[2]), val[0]))
+        cursor.execute("INSERT INTO Dut1_25c(blk,page,sector,fbc) values(int(Blk[0]), int(Blk[1]), int(Blk[2]), val[0])")
         if val[0] > 4:
             fw.write('fail,')
         else:
@@ -88,3 +94,5 @@ with open('D:\dut45_108c_summary.csv', mode= 'wt', encoding='utf-8') as fw:
             fw.write('(Y%s X%s IO%02d),' % (str(val[i]).split(' ')[0] , str(val[i]).split(' ')[1], int(str(val[i]).split(' ')[2])))
 
         fw.write('\n')
+
+conn.close()
